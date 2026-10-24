@@ -15,7 +15,7 @@ DEBUG = config("DEBUG", default=True, cast=bool)
 ALLOWED_HOSTS = [
     "127.0.0.1",
     "localhost",
-    #"montreal-backend-production-def9.up.railway.app",
+    "montreal-backend-trh7.onrender.com",
 ]
 
 # --------------------------
@@ -112,7 +112,7 @@ else:
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",
     "http://127.0.0.1:5173",
-    "https://lupithasotho.github.io",
+    "https://Atlacomulco-Montreal.github.io",
     "https://montreal-atlacomulco.netlify.app",
 
 
@@ -124,7 +124,7 @@ CORS_ALLOW_METHODS = ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"]
 
 CSRF_TRUSTED_ORIGINS = [
     #"https://montreal-backend-production-def9.up.railway.app",
-    "https://lupithasotho.github.io",
+    "https://Atlacomulco-Montreal.github.io",
     "https://montreal-atlacomulco.netlify.app",
 ]
 
