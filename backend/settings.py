@@ -15,7 +15,7 @@ DEBUG = config("DEBUG", default=True, cast=bool)
 ALLOWED_HOSTS = [
     "127.0.0.1",
     "localhost",
-    "montreal-backend-production-def9.up.railway.app",
+    #"montreal-backend-production-def9.up.railway.app",
 ]
 
 # --------------------------
@@ -85,24 +85,24 @@ WSGI_APPLICATION = "backend.wsgi.application"
 # DATABASE
 # --------------------------
 
+
 if DEBUG:
-    # Usar SQLite solo en local
     DATABASES = {
         "default": {
             "ENGINE": "django.db.backends.sqlite3",
             "NAME": BASE_DIR / "db.sqlite3",
         }
     }
-
 else:
-    # Usar MySQL en producción Railway
     DATABASES = {
-        "default": dj_database_url.parse(
-            config("DATABASE_URL"),   # 👈 ESTE ES EL BUENO
+        "default": dj_database_url.config(
+            default=config("DATABASE_URL"),
             conn_max_age=600,
-            ssl_require=False
+            ssl_require=True,
         )
     }
+
+
 
 
 # --------------------------
@@ -110,8 +110,12 @@ else:
 # --------------------------
 
 CORS_ALLOWED_ORIGINS = [
+    "http://localhost:5173",
+    "http://127.0.0.1:5173",
     "https://lupithasotho.github.io",
     "https://montreal-atlacomulco.netlify.app",
+
+
 ]
 
 CORS_ALLOW_CREDENTIALS = True
@@ -119,7 +123,7 @@ CORS_ALLOW_HEADERS = ["*"]
 CORS_ALLOW_METHODS = ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"]
 
 CSRF_TRUSTED_ORIGINS = [
-    "https://montreal-backend-production-def9.up.railway.app",
+    #"https://montreal-backend-production-def9.up.railway.app",
     "https://lupithasotho.github.io",
     "https://montreal-atlacomulco.netlify.app",
 ]
