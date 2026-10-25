@@ -114,7 +114,7 @@ CORS_ALLOWED_ORIGINS = [
     "http://127.0.0.1:5173",
     "https://Atlacomulco-Montreal.github.io",
     "https://montreal-atlacomulco.netlify.app",
-
+    "montreal-backend-trh7.onrender.com",
 
 ]
 
@@ -126,6 +126,7 @@ CSRF_TRUSTED_ORIGINS = [
     #"https://montreal-backend-production-def9.up.railway.app",
     "https://Atlacomulco-Montreal.github.io",
     "https://montreal-atlacomulco.netlify.app",
+    "montreal-backend-trh7.onrender.com",
 ]
 
 # --------------------------
@@ -135,3 +136,21 @@ CSRF_TRUSTED_ORIGINS = [
 STATIC_URL = "/static/"
 STATIC_ROOT = BASE_DIR / "staticfiles"
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+
+# Registro de errores para diagnóstico en Render
+LOGGING = {
+    "version": 1,
+    "disable_existing_loggers": False,
+    "handlers": {
+        "console": {
+            "class": "logging.StreamHandler",
+        },
+    },
+    "loggers": {
+        "django": {
+            "handlers": ["console"],
+            "level": "ERROR",
+            "propagate": True,
+        },
+    },
+}
