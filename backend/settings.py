@@ -110,10 +110,11 @@ else:
 # --------------------------
 
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:5173",
+     "http://localhost:5173",
     "http://127.0.0.1:5173",
     "https://Atlacomulco-Montreal.github.io",
     "https://montreal-atlacomulco.netlify.app",
+    "https://atlacomulcomontreal.netlify.app",
     "https://montreal-backend-trh7.onrender.com",
 
 ]
@@ -123,9 +124,9 @@ CORS_ALLOW_HEADERS = ["*"]
 CORS_ALLOW_METHODS = ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"]
 
 CSRF_TRUSTED_ORIGINS = [
-    #"https://montreal-backend-production-def9.up.railway.app",
     "https://Atlacomulco-Montreal.github.io",
     "https://montreal-atlacomulco.netlify.app",
+    "https://atlacomulcomontreal.netlify.app",
     "https://montreal-backend-trh7.onrender.com",
 ]
 
