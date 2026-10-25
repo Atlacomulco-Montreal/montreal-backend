@@ -114,7 +114,7 @@ CORS_ALLOWED_ORIGINS = [
     "http://127.0.0.1:5173",
     "https://Atlacomulco-Montreal.github.io",
     "https://montreal-atlacomulco.netlify.app",
-    "montreal-backend-trh7.onrender.com",
+    "https://montreal-backend-trh7.onrender.com",
 
 ]
 
@@ -126,7 +126,7 @@ CSRF_TRUSTED_ORIGINS = [
     #"https://montreal-backend-production-def9.up.railway.app",
     "https://Atlacomulco-Montreal.github.io",
     "https://montreal-atlacomulco.netlify.app",
-    "montreal-backend-trh7.onrender.com",
+    "https://montreal-backend-trh7.onrender.com",
 ]
 
 # --------------------------
