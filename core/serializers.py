@@ -1,5 +1,12 @@
+
 from rest_framework import serializers
-from .models import Curso, Inscripcion, Certificacion
+
+from .models import (
+    Curso,
+    Inscripcion,
+    Certificacion,
+    SolicitudContacto
+)
 
 
 class CursoSerializer(serializers.ModelSerializer):
@@ -15,9 +22,25 @@ class InscripcionSerializer(serializers.ModelSerializer):
 
 
 class CertificacionSerializer(serializers.ModelSerializer):
-    # Campo adicional útil para el frontend
-    curso_nombre = serializers.CharField(source="curso.nombre", read_only=True)
+    curso_nombre = serializers.CharField(
+        source="curso.nombre",
+        read_only=True
+    )
 
     class Meta:
         model = Certificacion
-        fields = ["id", "alumno", "curso", "curso_nombre", "folio", "fecha_emision"]
+        fields = [
+            "id",
+            "alumno",
+            "curso",
+            "curso_nombre",
+            "folio",
+            "fecha_emision"
+        ]
+
+
+class SolicitudContactoSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = SolicitudContacto
+        fields = "__all__"
+        read_only_fields = ("creado_en",)
